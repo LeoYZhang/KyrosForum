@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Voting</title>
+    </head>
+
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        .container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #votes {
+            display: inline;
+            padding: 5px 10px;
+            background-color: lightgray;
+            border-radius: 3px;
+            
+        }
+
+        .voteButton {
+            color: white;
+            border: none;
+            border-radius: 3px;
+            width: 100px;
+            height: 20px;
+            margin: 10px;
+        }
+
+        .upvoteButton {
+            background-color: green;
+        }
+
+        .upvoteButton:hover {
+            cursor: pointer;
+            background-color: #006400;
+        }
+
+        .downvoteButton {
+            background-color: red;
+        }
+
+        .downvoteButton:hover {
+            cursor: pointer;
+            background-color: #8b0000;
+        }
+    </style>
+
+    <body>
+        <div class='container'>
+            <input type='button' class='voteButton upvoteButton' value='Upvote' onclick='increaseScore();'>
+            <p id='votes'>0</p>
+            <input type='button' class='voteButton downvoteButton' value='Downvote' onclick='decreaseScore();'>
+        </div>
+        
+
+        <script>
+            let score = 0;
+
+            function increaseScore() {
+                score++;
+                document.getElementById('votes').innerHTML = score;
+            }
+
+            function decreaseScore() {
+                score--;
+                document.getElementById('votes').innerHTML = score;
+            }
+        </script>
+    </body>
+</html>
